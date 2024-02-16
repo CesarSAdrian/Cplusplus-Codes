@@ -1,0 +1,101 @@
+/*El siguiente código solicita al usuario dos valores para calcular las tablas 
+de multiplicar
+
+Ejercicio de repaso - Dra Karla Cantún | Estudiante: César Sánchez*/
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	
+	//Declaración de variables
+	char op;
+	int i, j, k, num;
+	
+	do{
+		
+		//Presentación
+		cout<<"\nBienvenido!\nEste programa funciona como una calculadora de las tablas de multiplicar que desees."
+		<<"Entre las opciones se encuentran: "
+		<<"\n\na) La tabla del numero que desee por los numeros del rango [1, 10]"
+		<<"\nb) La tabla del numero que desee por los numeros del rango deseado."
+		<<"\nc) Las tablas del 1 al 10."
+		<<"\n\nIngrese una opcion: ";
+		
+		cin>>op;
+		
+		//Casos
+		switch(op){
+			
+			case 'a':
+				//Rango restringido, numero personalizado
+				cout<<"\nIngrese el valor que desea multiplicar por el rango [1, 10]: ";
+				cin>>num;
+				
+				cout<<"\nLa tabla de multiplicar del numero "<<num<<" es: ";
+				
+				for(int i=1; i<=10; i++){
+					
+					cout<<"\n"<<num<<" x "<<i<<" = "<<num*i<<".";
+					
+				}
+				break;
+			
+			case 'b':
+				//Rango y numero personalizado
+				cout<<"\nIngrese el numero que desea multiplicar: ";
+				cin>>num;
+				
+				cout<<"\nIngrese el rango"
+				<<"\n(El primer valor del rango): ";
+				cin>>j;
+				
+				cout<<"\n(El ultimo valor del rango): ";
+				cin>>k;
+				
+				cout<<"\nLa tabla de multiplicar del numero "<<num<<" es: ";
+				
+				for(int i=j; i<=k; i++){
+					
+					cout<<"\n"<<num<<" x "<<i<<" = "<<num*i<<".";
+					
+				}
+				
+				break;
+				
+			case 'c':
+				//Tablas del 1 al 10
+				cout<<"\nLas tablas del 1 al 10 son: ";
+				
+				for (int i=1; i<=10; i++)
+				{	
+					cout<<"\nLa tabla del "<<i<<" es:\n";
+					
+				    for (int j=1; j<=10; j++)
+				    {
+				        cout<<"\n"<<i<<" x "<<j<<" = "<<i*j<<".";
+				    }
+					cout<<"\n";
+				}
+				break;
+				
+			default:
+				cout<<"\nOpcion no valida.";	
+		}
+
+		cout<<"\n\t\t\tGracias por utilizar este programa!";
+
+		cout<<"\n\nDesea visualizar el menu de opciones? (s - si, n - salir): ";
+		cin>>op;
+
+	}while(op == 's' || op == 'S');
+	
+	//Si la respuesta del usuario es n, sale del programa sin entrar a las opciones.
+	if(op == 'n' || op == 'N'){
+		
+		cout<<"\n\t\t\tGracias por utilizar este programa!";
+	}
+	
+	return 0;
+}
