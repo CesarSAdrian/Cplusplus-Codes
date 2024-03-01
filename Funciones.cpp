@@ -1,0 +1,37 @@
+/*Ejemplo en el que se puede apreciar el uso de funciones dentro de un código.
+
+Clase de Programación Estructurada.
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//Zona de declaraciones globales
+
+string nombre(void); //Declaracion de una función que no recibe parámetros y devuelve resultados.
+
+
+int main(){
+	
+	string name;
+	name = nombre(); //Invocación de la función nombre()
+	
+	cout<<"\nHola "<<name<<endl;
+	
+	return 0;
+	
+}
+
+//Zona de definición de funciones
+string nombre(){
+	
+	string n;
+	
+	cout<<"\nIngresa tu primer nombre por favor: ";
+	cin>>n;
+	
+	return n;
+	
+}
